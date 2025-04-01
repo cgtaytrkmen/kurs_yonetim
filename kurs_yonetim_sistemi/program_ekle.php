@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $insertQuery = "INSERT INTO ders_programi (donem_id, sinif_id, ders_id, ogretmen_id, gun, baslangic_saat, bitis_saat) 
                                VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($insertQuery);
-                $stmt->bind_param("iiissss", $donem_id, $sinif_id, $ders_id, $ogretmen_id, $gun, $baslangic_saat, $bitis_saat);
+                $stmt->bind_param("iiisss", $donem_id, $sinif_id, $ders_id, $ogretmen_id, $gun, $baslangic_saat, $bitis_saat);
 
                 if ($stmt->execute()) {
                     setMessage('success', 'Ders programı başarıyla eklendi.');
